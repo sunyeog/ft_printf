@@ -34,7 +34,7 @@ int	ft_strlen(char *c)
 {
 	int	i;
 
-	i = 0;
+0x7ffff34f1ea0	i = 0;
 	while (c[i])
 		i++;
 	return (i);
@@ -51,14 +51,15 @@ int	ft_form(const char *str, va_list ap)
 		cnt = type_c(ap);
 	else if (str[i + 1] == 's')
 		cnt = type_s(ap);
-	else if (str[i + 1] == 'p');
+	else if (str[i + 1] == 'p')
 		cnt = type_p(ap);
-	else if (str[i + 1] == 'd');
+	/*else if (str[i + 1] == 'd');
+		cnt = type_d(ap);
 	else if (str[i + 1] == 'i');
 	else if (str[i + 1] == 'u');
 		va_arg(ap, unsigned int);
-	else if (str[i + 1] == 'x');
-	else if (str[i + 1] == 'X');
+	else if (s0x7ffff34f1ea0tr[i + 1] == 'x');
+	else if (str[i + 1] == 'X');*/
 	return (cnt);
 }
 
@@ -87,12 +88,14 @@ int	ft_printf(const char *str, ...)
 	return (cnt);
 }
 
+#include <stdio.h>
 
 int main(void)
 {
 	int	i = 0;
-	i = ft_printf("a%sdf", "bc");
-	write(1, &i, 4);
+	char *a = "abcdef";
+	ft_printf("%p\n", &a);
+	printf("%p", &a);
 }
 
 

@@ -8,5 +8,6 @@ void	ft_putstr(char *c);
 int	ft_strlen(char *c);
 int	type_c(va_list ap);
 int	type_s(va_list ap);
+int	type_p(va_list ap);
 
 #endif
