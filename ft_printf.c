@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:00:15 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/04 21:52:53 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/05/05 00:12:30 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_form(const char *str, va_list ap)
 	else if (str[i + 1] == 'X')
 		cnt = type_xu(ap);
 	else if (str[i + 1] == '%')
-		cnt = type_per(ap);
+		cnt = type_per('%');
 	return (cnt);
 }
 
@@ -91,14 +91,3 @@ int	ft_printf(const char *str, ...)
 	}
 	return (cnt);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-	ft_printf("%%\n");
-	//ft_printf("%u\n", 4294967295);
-	//printf("\n\n");
-	printf("%%");
-	//printf("%u", 4294967295);
-}*/

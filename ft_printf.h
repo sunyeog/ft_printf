@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 21:58:01 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/04 22:00:27 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/05/05 00:08:20 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 void	ft_putchar(const char a);
 void	ft_putstr(char *c);
+int		ft_printf(const char *str, ...);
 int		ft_strlen(char *c);
 int		type_c(va_list ap);
 int		type_s(va_list ap);
@@ -31,6 +32,6 @@ int		ft_putnbr_u(unsigned int nb);
 int		int_hex(unsigned int res, int a);
 int		type_x(va_list ap);
 int		type_xu(va_list ap);
-int		type_per(va_list ap);
+int		type_per(char a);
 
 #endif

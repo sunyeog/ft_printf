@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:48:45 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/04 21:45:18 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/05/04 23:17:02 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,16 @@ int	type_s(va_list ap)
 	char	*s;
 
 	s = va_arg(ap, char *);
-	ft_putstr(s);
-	return (ft_strlen(s));
+	if (s != 0)
+	{
+		ft_putstr(s);
+		return (ft_strlen(s));
+	}
+	else
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 }
 
 int	unsigned_hex(unsigned long long res)
@@ -56,9 +64,17 @@ int	type_p(va_list ap)
 	int					cnt;
 
 	p = (unsigned long long)va_arg(ap, void *);
-	ft_putstr("0x");
-	cnt = unsigned_hex(p);
-	return (cnt + 2);
+	if (p != 0)
+	{
+		ft_putstr("0x");
+		cnt = unsigned_hex(p);
+		return (cnt + 2);
+	}
+	else
+	{
+		ft_putstr("(nil)");
+		return (5);
+	}
 }
 
 int	type_u(va_list ap)
