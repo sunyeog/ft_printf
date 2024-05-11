@@ -42,52 +42,54 @@ int	ft_strlen(char *c)
 int	ft_form(const char *str, va_list ap)
 {
 	int	i;
-	int	cnt;
 
 	i = 0;
-	cnt = 0;
 	if (str[i + 1] == 'c')
-		cnt = type_c(ap);
+		return (type_c(ap));
 	else if (str[i + 1] == 's')
-		cnt = type_s(ap);
+		return (type_s(ap));
 	else if (str[i + 1] == 'p')
-		cnt = type_p(ap);
+		return (type_p(ap));
 	else if (str[i + 1] == 'd')
-		cnt = type_d(ap);
+		return (type_d(ap));
 	else if (str[i + 1] == 'i')
-		cnt = type_d(ap);
+		return (type_d(ap));
 	else if (str[i + 1] == 'u')
-		cnt = type_u(ap);
+		return (type_u(ap));
 	else if (str[i + 1] == 'x')
-		cnt = type_x(ap);
+		return (type_x(ap));
 	else if (str[i + 1] == 'X')
-		cnt = type_xu(ap);
+		return (type_xu(ap));
 	else if (str[i + 1] == '%')
-		cnt = type_per('%');
-	return (cnt);
+		return (type_per('%'));
+	return (-1);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		cnt;
+	int		temp;
 
 	va_start(ap, str);
 	cnt = 0;
+	if (str == 0)
+		return (-1);
 	while (*str)
 	{
 		if (*str == '%')
 		{
-			cnt += ft_form(str, ap);
-			str++;
-			str++;
+			temp = ft_form(str++, ap);
+			if (*str == 0 || temp == -1)
+				return (-1);
+			cnt += temp;
 		}
 		else
 		{
 			ft_putchar(*str);
 			cnt++;
-			str++;
 		}
+		str++;
 	}
 	return (cnt);
 }
