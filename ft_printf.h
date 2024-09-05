@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 21:58:01 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/05 00:08:20 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/09/05 18:58:31 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-
+# include <stdio.h>
 void	ft_putchar(const char a);
 void	ft_putstr(char *c);
 int		ft_printf(const char *str, ...);
 int		ft_strlen(char *c);
-int		type_c(va_list ap);
-int		type_s(va_list ap);
-int		type_p(va_list ap);
+int		type_c(va_list *ap);
+int		type_s(va_list *ap);
+int		type_p(va_list *ap);
 int		unsigned_hex(unsigned long long res);
-int		type_d(va_list ap);
+int		type_d(va_list *ap);
 int		extraction(unsigned int nb);
 int		ft_putnbr(int nb);
-int		type_u(va_list ap);
+int		type_u(va_list *ap);
 int		ft_putnbr_u(unsigned int nb);
 int		int_hex(unsigned int res, int a);
-int		type_x(va_list ap);
-int		type_xu(va_list ap);
+int		type_x(va_list *ap);
+int		type_xu(va_list *ap);
 int		type_per(char a);
 
 #endif

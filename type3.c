@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 18:25:08 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/05 00:07:33 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/09/05 18:57:59 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int	int_hex(unsigned int res, int a)
 	return (cnt);
 }
 
-int	type_x(va_list ap)
+int	type_x(va_list *ap)
 {
 	int	x;
 	int	cnt;
 
-	x = (unsigned int)va_arg(ap, int);
+	x = (unsigned int)va_arg(*ap, int);
 	if (x != 0)
 	{
 		cnt = int_hex(x, 1);
@@ -53,12 +53,12 @@ int	type_x(va_list ap)
 	}
 }
 
-int	type_xu(va_list ap)
+int	type_xu(va_list *ap)
 {
 	int	xu;
 	int	cnt;
 
-	xu = (unsigned int)va_arg(ap, int);
+	xu = (unsigned int)va_arg(*ap, int);
 	if (xu != 0)
 	{
 		cnt = int_hex(xu, 0);

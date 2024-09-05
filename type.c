@@ -6,26 +6,26 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:48:45 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/04 23:17:02 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/09/05 18:57:15 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	type_c(va_list ap)
+int	type_c(va_list *ap)
 {
 	char	a;
 
-	a = (char)va_arg(ap, int);
+	a = (char)va_arg(*ap, int);
 	ft_putchar(a);
 	return (1);
 }
 
-int	type_s(va_list ap)
+int	type_s(va_list *ap)
 {
 	char	*s;
 
-	s = va_arg(ap, char *);
+	s = va_arg(*ap, char *);
 	if (s != 0)
 	{
 		ft_putstr(s);
@@ -58,12 +58,12 @@ int	unsigned_hex(unsigned long long res)
 	return ((int)cnt);
 }
 
-int	type_p(va_list ap)
+int	type_p(va_list *ap)
 {
 	unsigned long long	p;
 	int					cnt;
 
-	p = (unsigned long long)va_arg(ap, void *);
+	p = (unsigned long long)va_arg(*ap, void *);
 	if (p != 0)
 	{
 		ft_putstr("0x");
@@ -77,12 +77,12 @@ int	type_p(va_list ap)
 	}
 }
 
-int	type_u(va_list ap)
+int	type_u(va_list *ap)
 {
 	unsigned int	u;
 	int				cnt;
 
-	u = va_arg(ap, unsigned int);
+	u = va_arg(*ap, unsigned int);
 	cnt = ft_putnbr_u(u);
 	return (cnt);
 }

@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:00:15 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/05 00:12:30 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/09/05 18:59:53 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_strlen(char *c)
 	return (i);
 }
 
-int	ft_form(const char *str, va_list ap)
+int	ft_form(const char *str, va_list *ap)
 {
 	int	i;
 
@@ -79,7 +79,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*str == '%')
 		{
-			temp = ft_form(str++, ap);
+			temp = ft_form(str++, &ap);
 			if (*str == 0 || temp == -1)
 				return (-1);
 			cnt += temp;
@@ -92,4 +92,12 @@ int	ft_printf(const char *str, ...)
 		str++;
 	}
 	return (cnt);
+}
+
+#include "ft_printf.h"
+
+int main(void)
+{
+	ft_printf("%d", 10);
+	return (0);
 }

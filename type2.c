@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:22:14 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/05/04 21:46:16 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:13:13 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ int	ft_putnbr_u(unsigned int nb)
 	return (cnt);
 }
 
-int	type_d(va_list ap)
+int	type_d(va_list *ap)
 {
 	int	d;
 	int	cnt;
 
-	d = va_arg(ap, int);
+	d = va_arg(*ap, int);
 	cnt = ft_putnbr(d);
 	return (cnt);
 }
